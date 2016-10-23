@@ -1,4 +1,4 @@
-package eu.kielczewski.example.controller;
+package com.sct.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

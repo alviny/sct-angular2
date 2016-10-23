@@ -1,9 +1,9 @@
-package eu.kielczewski.example.config;
+package com.sct.web.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "eu.kielczewski.example")
+@ComponentScan(basePackages = "com.sct.web")
 class AppConfig {
 }

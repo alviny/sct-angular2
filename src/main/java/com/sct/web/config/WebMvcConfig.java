@@ -1,4 +1,4 @@
-package eu.kielczewski.example.config;
+package com.sct.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
