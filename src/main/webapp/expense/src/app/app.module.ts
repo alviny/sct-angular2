@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule,JsonpModule  } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PurchaseItemComponent } from './purchase-item/purchase-item.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,6 +12,7 @@ import { PurchaseItemComponent } from './purchase-item/purchase-item.component';
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     FormsModule,
     HttpModule,
     JsonpModule

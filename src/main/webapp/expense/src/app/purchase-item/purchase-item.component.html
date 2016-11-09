@@ -1,13 +1,24 @@
 <h3>Purchased Items</h3>
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Price</th>
-  </tr>
-  <tr *ngFor="let item of items">
-    <td>{{item.purchaseDate}}</td>
-    <td>{{item.description}}</td>
-    <td>{{item.price}}</td>
-  </tr>
-</table>
+<div class="card">
+
+<div class="card-header">
+  <i class="fa fa-align-justify"></i>
+  Expenses
+</div>
+<div class="card-block">
+  <table class="table">
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{item.purchaseDate | date: 'MM-dd-yyyy'}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.price | currency:'USD':true:'1.2-2'}}</td>
+    </tr>
+  </table>  
+  <ngb-pagination [collectionSize]="50" [(page)]="currentPage" size="sm"></ngb-pagination>
+</div>
+</div>
+

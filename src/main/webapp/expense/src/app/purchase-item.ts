@@ -1,5 +1,5 @@
 export class PurchaseItem {
-    purchaseDate:string
+    purchaseDate:Date
     description: string;
-    price:string;
+    price:number;
 }

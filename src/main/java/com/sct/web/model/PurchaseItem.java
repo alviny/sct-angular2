@@ -1,21 +1,23 @@
 package com.sct.web.model;
 
+import java.util.Date;
+
 public class PurchaseItem {
-	private String purchaseDate;
+	private Date purchaseDate;
 	private String description;
-	private String price;
+	private Double price;
 	public PurchaseItem() {
 		// TODO Auto-generated constructor stub
 	}
-	public PurchaseItem(String purchaseDate, String description, String price) {
+	public PurchaseItem(Date purchaseDate, String description, Double price) {
 		this.purchaseDate = purchaseDate;
 		this.description = description;
 		this.price = price;
 	}	
-	public String getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
-	public void setPurchaseDate(String purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 	public String getDescription() {
@@ -24,10 +26,10 @@ public class PurchaseItem {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
