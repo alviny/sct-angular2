@@ -1,5 +1,8 @@
 export class PurchaseItem {
-    purchaseDate:Date
+    referenceId:string;
+    transDate:Date
+    postDate:Date
     description: string;
-    price:number;
+    amount:number;
+    categoryName:string;
 }

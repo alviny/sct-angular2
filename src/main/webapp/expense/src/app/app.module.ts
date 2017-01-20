@@ -4,15 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule,JsonpModule  } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PurchaseItemComponent } from './purchase-item/purchase-item.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CategoryComponent } from './category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PurchaseItemComponent
+    PurchaseItemComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
     FormsModule,
     HttpModule,
     JsonpModule

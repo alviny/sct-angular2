@@ -13,3 +13,8 @@ Context:
 
 http://localhost:8080/sct-angular2/expense/dist/index.html
 
+Todo:
+
+move the expense directory to another project.
+
+

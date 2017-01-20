@@ -4,12 +4,12 @@ import { PurchaseItem } from '../purchase-item';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {CategoryService} from '../category.service';
 @Component({
   selector: 'app-purchase-item',
   templateUrl: './purchase-item.component.html',
   styleUrls: ['./purchase-item.component.css'],
-  providers: []
+  providers: [CategoryService]
 })
 export class PurchaseItemComponent implements OnInit {
   public items:PurchaseItem[];
@@ -17,6 +17,7 @@ export class PurchaseItemComponent implements OnInit {
   public totalItems:number=200;
   public maxSize:number=10;
   public total:number;
+
   constructor(private _purchaseItemService: PurchaseItemService) { }
 
   ngOnInit() {
@@ -27,4 +28,8 @@ export class PurchaseItemComponent implements OnInit {
     error=> console.log(error),
     () => console.log('Get all purchase items complete'));
   }
+  update(){
+    console.log('update');
+  }
+ 
 }
