@@ -13,7 +13,7 @@ class AppConfig {
 	
 	@Bean
 	public DataSource dataSource(){
-		DriverManagerDataSource ds = new DriverManagerDataSource("jdbc:mysql://localhost:3306/sct","sct-web","sct-web");
+		DriverManagerDataSource ds = new DriverManagerDataSource("jdbc:mysql://localhost:3306/sct","sct-web","sctweb100");
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
 		return ds;
 	}

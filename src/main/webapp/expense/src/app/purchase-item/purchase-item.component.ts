@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 import { PurchaseItemService} from '../purchase-item.service';
 import { PurchaseItem } from '../purchase-item';
+import {Category} from '../category';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import {CategoryService} from '../category.service';
 @Component({
   selector: 'app-purchase-item',
@@ -12,24 +14,20 @@ import {CategoryService} from '../category.service';
   providers: [CategoryService]
 })
 export class PurchaseItemComponent implements OnInit {
-  public items:PurchaseItem[];
-  public page:number=4;
-  public totalItems:number=200;
-  public maxSize:number=10;
-  public total:number;
-
-  constructor(private _purchaseItemService: PurchaseItemService) { }
-
-  ngOnInit() {
-    this.getItems();
+  @Input() purchasedItem:PurchaseItem;
+  @Input() categories:Category[];
+  selectedCategory:Category;
+  
+  ngOnInit(){
+    console.log("PurchaseItemComponent:init()");
   }
-  getItems():void{
-    this._purchaseItemService.getItems().subscribe((data:PurchaseItem[]) => this.items = data,
-    error=> console.log(error),
-    () => console.log('Get all purchase items complete'));
-  }
+
   update(){
-    console.log('update');
+    console.log('update:' +this.purchasedItem.referenceId + ', category:' + this.selectedCategory.type);
+  }
+  updateCategory(eCategory:Category){
+    console.log("updateCategory:" + eCategory.type);
+    this.selectedCategory = eCategory;
   }
  
 }

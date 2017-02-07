@@ -3,34 +3,56 @@ package com.sct.web.model;
 import java.util.Date;
 
 public class PurchaseItem {
-	private Date purchaseDate;
+	private String referenceId;
+	private Date transDate;
+	private Date postDate;
 	private String description;
-	private Double price;
+	private Double amount;
+	public String getReferenceId() {
+		return referenceId;
+	}
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
+	}
+	public Date getTransDate() {
+		return transDate;
+	}
+	public void setTransDate(Date transDate) {
+		this.transDate = transDate;
+	}
+	public Date getPostDate() {
+		return postDate;
+	}
+	public void setPostDate(Date postDate) {
+		this.postDate = postDate;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	private String categoryName;
 	public PurchaseItem() {
 		// TODO Auto-generated constructor stub
 	}
-	public PurchaseItem(Date purchaseDate, String description, Double price) {
-		this.purchaseDate = purchaseDate;
+	public PurchaseItem(Date transDate, String description, Double amount) {
+		this.transDate = transDate;
 		this.description = description;
-		this.price = price;
+		this.amount = amount;
 	}	
-	public Date getPurchaseDate() {
-		return purchaseDate;
-	}
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
-	}
+
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Double getPrice() {
-		return price;
+	public Double getAmount() {
+		return amount;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setAmount(Double amount) {
+		this.amount = amount;
 	}
 
 }

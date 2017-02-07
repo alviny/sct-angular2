@@ -1,33 +1,12 @@
-<h3>Purchased Items</h3>
-<div class="card">
 
-<div class="card-header">
-  <i class="fa fa-align-justify"></i>
-  Expenses
-</div>
-<div class="card-block">
-  <table class="table">
-    <tr>
-      <th>Reference#</th>
-      <th>Trans Date</th>
-      <th>Post Date</th>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>Category</th>
-    </tr>
-    <tr *ngFor="let item of items">
-      <td>{{item.referenceId}}</td>
-      <td>{{item.transDate | date: 'MM-dd-yyyy'}}</td>
-      <td>{{item.postDate | date: 'MM-dd-yyyy'}}</td>
-      <td>{{item.description}}</td>
-      <td>{{item.amount | currency:'USD':true:'1.2-2'}}</td>
-      <td>
-        <category></category>
-      </td>
-      <td><button [(click)]="update()">Update</button>
-    </tr>
-  </table>  
-  <ngb-pagination [collectionSize]="50" [(page)]="currentPage" size="sm"></ngb-pagination>
-</div>
-</div>
-
+  <th scope="row">#</th>
+  <td>{{purchasedItem.referenceId}}</td>
+  <td>{{purchasedItem.transDate | date: 'MM-dd-yyyy'}}</td>
+  <td>{{purchasedItem.postDate | date: 'MM-dd-yyyy'}}</td>
+  <td>{{purchasedItem.description}}</td>
+  <td>{{purchasedItem.amount | currency:'USD':true:'1.2-2'}}</td>
+  <td>
+    <category [categories] = "categories"  (selectedCategoryEvent)="updateCategory($event)"></category>
+  </td>
+  <td><button (click)="update()">Update</button></td>
+ 

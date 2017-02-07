@@ -6,7 +6,6 @@ import {Category} from './category';
 @Injectable()
 export class CategoryService {
   private endpoint_url = "http://localhost:8080/sct-angular2/category/";
-  categories:Category[];
   constructor(private http: Http) { 
     console.log('CategoryService Initialized.');
   }

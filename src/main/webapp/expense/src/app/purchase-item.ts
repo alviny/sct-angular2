@@ -1,3 +1,4 @@
+
 export class PurchaseItem {
     referenceId:string;
     transDate:Date

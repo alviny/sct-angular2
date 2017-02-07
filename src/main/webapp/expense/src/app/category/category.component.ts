@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 import {CategoryService} from '../category.service';
 import {Category} from '../category';
 @Component({
@@ -7,26 +7,21 @@ import {Category} from '../category';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  public categories:Category[];
-  public selectedCategoryObj:Category; 
+  @Input() categories:Category[];
+  @Input() category:Category; //selected category
+  @Output() selectedCategoryEvent:EventEmitter<Category> = new EventEmitter();;
 
   constructor(private _categoryService:CategoryService) { 
-    console.log('Category component init.');
+    console.log('Category component constructor');
   }
 
   ngOnInit() {
-    this.getCategories();
-    
-    //this.selectedCategoryObj = this.categories[0];
+    console.log('Category Component init');
+
   }
-  onChangeObj(newValue) {
-    console.log(newValue);
-    this.selectedCategoryObj = newValue;
-  } 
-  getCategories(){
-    this._categoryService.getCategories().subscribe((data:Category[]) => this.categories = data,
-    error=> console.log(error),
-    () => console.log('Get all categories complete'));
-    
+  update(){
+    console.log('current category:' + this.category.type);
+    this.selectedCategoryEvent.emit(this.category);
   }
+
 }

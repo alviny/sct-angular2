@@ -5,11 +5,13 @@ import { HttpModule,JsonpModule  } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PurchaseItemComponent } from './purchase-item/purchase-item.component';
 import { CategoryComponent } from './category/category.component';
+import { PurchaseItemListComponent } from './purchase-item-list/purchase-item-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     PurchaseItemComponent,
-    CategoryComponent
+    CategoryComponent,
+    PurchaseItemListComponent,
   ],
   imports: [
     BrowserModule,
