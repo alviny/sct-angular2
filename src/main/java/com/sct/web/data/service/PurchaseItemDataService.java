@@ -18,4 +18,10 @@ public class PurchaseItemDataService {
 	public List<PurchaseItem> getPurchaseItems(){
 		return dao.getPurchaseItems();
 	}
+	public PurchaseItem getPurchaseItem(String referenceId){
+		return dao.getPurchaseItem(referenceId);
+	}
+	public void updatePurchaseItem(String referenceId, String newCategory){
+		dao.updatePurchaseItem(referenceId, newCategory);
+	}
 }

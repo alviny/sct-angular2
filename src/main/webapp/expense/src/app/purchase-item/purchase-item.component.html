@@ -1,12 +1,14 @@
 
-  <th scope="row">#</th>
-  <td>{{purchasedItem.referenceId}}</td>
-  <td>{{purchasedItem.transDate | date: 'MM-dd-yyyy'}}</td>
-  <td>{{purchasedItem.postDate | date: 'MM-dd-yyyy'}}</td>
-  <td>{{purchasedItem.description}}</td>
-  <td>{{purchasedItem.amount | currency:'USD':true:'1.2-2'}}</td>
-  <td>
-    <category [categories] = "categories"  (selectedCategoryEvent)="updateCategory($event)"></category>
-  </td>
-  <td><button (click)="update()">Update</button></td>
+
+    <td>{{purchasedItem.referenceId}}</td>
+    <td>{{purchasedItem.transDate | date: 'MM-dd-yyyy'}}</td>
+    <td>{{purchasedItem.postDate | date: 'MM-dd-yyyy'}}</td>
+    <td>{{purchasedItem.description}}</td>
+    <td>{{purchasedItem.amount | currency:'USD':true:'1.2-2'}}</td>
+    <td>
+      <category [categories] = "categories" [category]="selectedCategory" (selectedCategoryEvent)="updateCategory($event)"
+      ></category>
+    </td>
+    <td><button (click)="update()">Update</button></td>
+
  

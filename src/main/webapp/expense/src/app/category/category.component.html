@@ -1,3 +1,5 @@
 <select [(ngModel)]="category" (ngModelChange)="update($event)" name="sel2">
-  <option [ngValue]="i" *ngFor="let i of categories">{{i.type}}</option>
+  <option [ngValue]="i" *ngFor="let i of categories" [selected]="category == null ? false:(i.type === category.type)">{{i.type}}
+
+  </option>
 </select>

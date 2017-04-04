@@ -23,4 +23,5 @@ public class CategoryController {
 		List<Category> items = service.getCategories();
 		return items;
 	}
+	
 }

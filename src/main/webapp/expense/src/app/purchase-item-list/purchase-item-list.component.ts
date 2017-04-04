@@ -36,4 +36,8 @@ export class PurchaseItemListComponent  {
     error=> console.log(error),
     () => console.log('Get all categories complete'));
   }
+  updatePurchaseItem(updatedPurchaseItem:PurchaseItem){
+    this._purchaseItemService.updateCategory(updatedPurchaseItem);
+  }
+
 }

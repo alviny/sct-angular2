@@ -17,7 +17,16 @@ public class PurchaseItemDAO {
 
 	public List<PurchaseItem> getPurchaseItems(){
 		JdbcTemplate template = new JdbcTemplate(dataSource);
-		List<PurchaseItem> items = template.query("SELECT * FROM purchase_item",new BeanPropertyRowMapper<PurchaseItem>(PurchaseItem.class));
+		List<PurchaseItem> items = template.query("select p.*, c.type as category_name from purchase_item p left outer join category as c on p.category_id=c.id",new BeanPropertyRowMapper<PurchaseItem>(PurchaseItem.class));
 		return items;
+	}
+	public PurchaseItem getPurchaseItem(String referenceId){
+		JdbcTemplate template = new JdbcTemplate(dataSource);
+		PurchaseItem item = template.queryForObject("select p.*, c.type as category_name from purchase_item p left outer join category as c on p.category_id=c.id and p.reference_id=?",new Object[]{referenceId}, new BeanPropertyRowMapper<PurchaseItem>(PurchaseItem.class) );
+		return item;
+	}
+	public void updatePurchaseItem(String referenceId, String newCategory){
+		JdbcTemplate template = new JdbcTemplate(dataSource);
+		template.update("UPDATE purchase_item p SET p.category_id=(SELECT id FROM category c WHERE c.type=?) WHERE p.reference_id=?", newCategory, referenceId);
 	}
 }

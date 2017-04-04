@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 import {Category} from './category';
 @Injectable()
 export class CategoryService {
-  private endpoint_url = "http://localhost:8080/sct-angular2/category/";
+  private endpoint_url = "/sct-angular2/category/";
   constructor(private http: Http) { 
     console.log('CategoryService Initialized.');
   }

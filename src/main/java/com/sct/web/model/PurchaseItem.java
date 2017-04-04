@@ -8,6 +8,14 @@ public class PurchaseItem {
 	private Date postDate;
 	private String description;
 	private Double amount;
+	private String categoryName;
+	public PurchaseItem() {
+	}
+	public PurchaseItem(Date transDate, String description, Double amount) {
+		this.transDate = transDate;
+		this.description = description;
+		this.amount = amount;
+	}		
 	public String getReferenceId() {
 		return referenceId;
 	}
@@ -32,16 +40,6 @@ public class PurchaseItem {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	private String categoryName;
-	public PurchaseItem() {
-		// TODO Auto-generated constructor stub
-	}
-	public PurchaseItem(Date transDate, String description, Double amount) {
-		this.transDate = transDate;
-		this.description = description;
-		this.amount = amount;
-	}	
-
 	public String getDescription() {
 		return description;
 	}
